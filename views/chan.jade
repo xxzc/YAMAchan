@@ -1,0 +1,19 @@
+doctype html
+html
+ head
+  title=YamaChan
+
+ body
+  h1 YAMAちゃん
+  #newpost
+   form(action="postit" method="get")
+    textarea(name="text")
+    input(type="submit")
+
+  - function u2s(u){return String(new Date(u*1000));}
+  .posts
+  each i in data
+   .post
+    .time= u2s(i.time)
+    blockquote= i.text
+  footer CopyLeft
